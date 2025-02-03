@@ -1,0 +1,35 @@
+<!-- <p>product-list works!-- static text</p>
+<p>Name:iphone</p>
+<p>Price:$999</p>
+<p>Color:Matte black</p>
+<p>Discounted Price:$780</p>
+<br><hr> -->
+<div class="ekart--product--container">
+
+  <app-search (searchedTextChanged)="setSearchText($event)"></app-search>
+  <!-- <div *ngFor="let item of listOfString ">
+    <p>current element of array is:{{item}}</p>
+  </div> -->
+<!-- <p>product-list works!-- dynamic text -- using list</p> -->
+<!-- <img src="{{product.image}}">  using string interpolation -->
+<!-- <img [src]="product.image">  using property binding -->
+<!-- <p>Name: {{ product.name }}</p>
+<p>Price: {{ '$'+product.price }}</p>
+<p>Color: {{ product.color }}</p>
+<p>Discounted Price: ${{ product.discountedPrice }}</p>
+<p>discounted price for you : {{'$'+((product.price)-(product.price*product.discount)/100)}}</p> -->
+
+<!-- <p>discounted price for you : {{'$'+getDiscountPrice().toFixed(2)}}</p>
+<p>{{product.instock>0?'only '+product.instock+' item left':'not in stock'}}</p>
+<button (click)="decrementCartValue()">-</button>
+<span>{{addToCart}}</span>
+<button (click)="incrementCartValue()">+</button> -->
+<!-- <button [disabled]="!(product.instock>0)">Buy Now</button> -->
+<!-- <input [value]="name" [attr.aria-hidden]=""> -->
+
+<!--event binding-->
+<!-- <input (input)="onNameChange($event)">
+<p>name ={{name}}</p> -->
+<product-list [psearchText]="ctsearchText"></product-list>
+
+</div>

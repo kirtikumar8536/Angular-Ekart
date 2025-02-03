@@ -1,0 +1,36 @@
+<!-- here we will not loop and also this is one product  -->
+
+<!-- Property 'Product' does not exist on type 'ProductComponent'.  to sove this we will use child and parent concept to bind using @input -->
+<div class="ekart--product--item">
+  <div class="ekart--wishlist--sale--container">
+    <div class="ekart--add--to--wishlist">
+      <i class="fa fa-heart-o" aria-hidden="true"></i>
+    </div>
+    <div class="ekart-on-sale-tag" 
+         *ngIf="product.discountPrice && product.price && product.discountPrice < product.price">
+      {{ ((1 - (product.discountPrice / product.price)) * 100).toFixed(0) }}% OFF
+    </div>
+  </div>
+
+  <div class="ekart--product--image">
+    <img [src]="product.imageURL" [alt]="product.name">
+  </div>
+
+  <div class="ekart--add--to--price">{{ product.price | currency }}</div>
+  <div class="ekart--product--name">{{ product.name }}</div>
+  <div class="ekart--product--category">
+    {{ product.gender }} • {{ product.category }} • {{ product.brand }}
+  </div>
+
+  <div class="ekart--product--available-colors">
+    {{ product.color?.length || 0 }} Colors • Best Seller
+  </div>
+  
+  <div class="ekart--product--in--stock" 
+       [ngStyle]="{
+         'font-weight': 'bold',
+         'color': product.is_in_inventory ? '#28a745' : '#dc3545'
+       }">
+    {{ product.is_in_inventory ? 'In Stock' : 'Out of Stock' }}
+  </div>
+</div>
